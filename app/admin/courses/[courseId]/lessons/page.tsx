@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import {
     Layout,
-    LayoutActions,
     LayoutContent,
     LayoutHeader,
     LayoutTitle,
 } from '@/components/layout/layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getRequiredAuthSession } from '@/lib/auth';
-import { notFound } from 'next/navigation';
+import { prisma } from '@/lib/prisma';
+import { notFound, redirect } from 'next/navigation';
 import { getCourseLessons } from './lessons.query';
-import { LessonItem } from './lessonItem';
-import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
+import { AdminLessonSortable } from './AdminLessonSortable';
+import { SubmitButton } from '@/components/form/submitButton';
 
 export default async function CourseLessonsPage({
     params,
@@ -43,20 +42,46 @@ export default async function CourseLessonsPage({
                         <CardTitle>Lessons</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-2">
-                        {course.lessons.map((lesson) => (
-                            <LessonItem key={lesson.id} lesson={lesson} />
-                        ))}
-                        <LayoutActions className='flex'>
-                            <Link
-                                href={`/admin/courses/${params.courseId}/lessons`}
-                                className={buttonVariants({ variant: 'outline', size: 'lg' })}
+                        <AdminLessonSortable items={course.lessons} />
+                        <form>
+                            <SubmitButton
+                                size="sm"
+                                variant="secondary"
+                                className="w-full"
+                                formAction={async () => {
+                                    'use server';
+
+                                    const session = await getRequiredAuthSession();
+
+                                    const courseId = params.courseId;
+
+                                    // Authorize the user
+                                    await prisma.course.findFirstOrThrow({
+                                        where: {
+                                            creatorId: session.user.id,
+                                            id: courseId,
+                                        },
+                                    });
+
+                                    const lesson = await prisma.lesson.create({
+                                        data: {
+                                            name: 'Brouillon Lesson',
+                                            rank: 'aaaaa',
+                                            state: 'HIDDEN',
+                                            courseId: courseId,
+                                            content: '## Default content',
+                                        },
+                                    });
+
+                                    redirect(`/admin/courses/${courseId}/lessons/${lesson.id}`);
+                                }}
                             >
-                                Create lesson
-                            </Link>
-                        </LayoutActions>
+                                Créer une lesson
+                            </SubmitButton>
+                        </form>
                     </CardContent>
                 </Card>
             </LayoutContent>
-        </Layout >
+        </Layout>
     );
 }
