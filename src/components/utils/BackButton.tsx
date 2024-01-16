@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import { useIsClient } from 'usehooks-ts';
 import { Button } from '../ui/button';
 
-export const BackButton = () => {
+export const Backbutton = () => {
 
     const _pathname = usePathname();
     const pathname = _pathname?.split('/').filter(Boolean) ?? [];
