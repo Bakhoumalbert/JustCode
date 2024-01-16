@@ -4,9 +4,8 @@ import { getRequiredAuthSession } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { BookCheck, Presentation, User2 } from 'lucide-react';
 
-export type QuickStatsProps = {};
 
-export const QuickStats = async (props: QuickStatsProps) => {
+export const QuickStats = async () => {
     const session = await getRequiredAuthSession();
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
