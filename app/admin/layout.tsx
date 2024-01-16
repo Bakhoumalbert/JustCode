@@ -7,8 +7,8 @@ export default function AdminLayout({ children }: PropsWithChildren) {
         <div>
             <div className="m-auto mt-4 max-w-2xl pl-4 ">
                 <div className='flex flex-row gap-4'>
-                    <Backbutton />
-                    <Breadcrumbs />
+                    {/* <Backbutton />
+                    <Breadcrumbs /> */}
                 </div>
             </div>
             {children}
