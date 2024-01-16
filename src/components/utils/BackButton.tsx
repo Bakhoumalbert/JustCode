@@ -8,14 +8,16 @@ export const Backbutton = () => {
     const _pathname = usePathname();
     const pathname = _pathname?.split('/').filter(Boolean) ?? [];
 
-    const isClient = useIsClient()
+    const isClient = useIsClient();
 
-    if (!isClient) return;
+    if (!isClient) return null;
 
     return (
         pathname.length > 1 &&
         <Button onClick={() => window.history.back()} variant="ghost">
             Retour
         </Button>
-    )
+    );
 }
+
+
