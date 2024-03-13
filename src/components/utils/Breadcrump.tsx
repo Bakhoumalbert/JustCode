@@ -1,41 +1,74 @@
-"use client"
+'use client';
+
+import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 import { useIsClient } from 'usehooks-ts';
-import { Typography } from '../ui/Typography';
-import { cn } from '@/lib/utils';
-import { ChevronRight } from 'lucide-react';
 
-export const Breadcrumbs = () => {
-
+export const Breadcrumb = () => {
     const _pathname = usePathname();
     const pathname = _pathname?.split('/').filter(Boolean) ?? [];
-    const lastsegment = pathname[pathname.length - 1]
 
-    const isClient = useIsClient()
+    const isClient = useIsClient();
 
     if (!isClient) return;
 
     return (
-        <div className='flex items-center'>
-            {
-                pathname.map((path, index) => (
-                    <div key={index} className="flex items-center">
-                        <Link href={
-                            index > 0 ? `/admin/${pathname.slice(1, index + 1).join("/")}` : "/admin"} className='flex flex-row'>
-                            <Typography variant="base" className={cn(path !== lastsegment ? "text-gray-600" : "text-gray", "capitalize hover:text-gray-700 animate")}>
-                                {pathname.indexOf(path) === 2 ? path.slice(0, 2) + ".." + path.slice(path.length - 2) : pathname.indexOf(path) === 4 ? path.slice(0, 1) + ".." + path.slice(path.length - 2) : path.replace(/-/g, " ")}
-                            </Typography>
-                            {
-                                (lastsegment !== path) &&
-                                <div className='flex items-center pt-1'>
-                                    <ChevronRight className="" size={16} />
-                                </div>
-                            }
-                        </Link>
-                    </div >
+        <nav aria-label="Breadcrumb" className="mx-4">
+            <ol role='list' className="text-skin-secondary flex items-center gap-1 text-sm">
+                {pathname.map((item, index) => (
+                    <BreadcrumbItem
+                        item={item}
+                        index={index}
+                        pathname={pathname}
+                        isPrismaId={isPrismaId}
+                    />
                 ))}
-        </div>
-    )
+            </ol>
+        </nav>
+    );
+};
+
+const isPrismaId = (id: string): boolean => {
+    // Regular expression to match URL-friendly strings of exactly 25 characters.
+    const regex = /^[\w-]{25}$/;
+    return regex.test(id);
+};
+
+const formatId = (id: string): string => {
+    if (id.length <= 4) {
+        return id;
+    }
+    return `${id.slice(0, 2)}...${id.slice(-2)}`;
+};
+
+interface BreadcrumbItemProps {
+    item: string;
+    index: number;
+    pathname: string[];
+    isPrismaId: (id: string) => boolean;
 }
+
+const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
+    item,
+    index,
+    pathname,
+    isPrismaId,
+}) => {
+    return (
+        <Fragment key={item}>
+            <li>
+                <Link
+                    href={`/${pathname.slice(0, index + 1).join('/')}`}
+                    className="block text-xs text-muted-foreground transition hover:text-foreground"
+                >
+                    {isPrismaId(item) ? formatId(item) : item}
+                </Link>
+            </li>
+            {index !== pathname.length - 1 && (
+                <ChevronRight className="text-muted-foreground" size={16} />
+            )}
+        </Fragment>
+    );
+};
