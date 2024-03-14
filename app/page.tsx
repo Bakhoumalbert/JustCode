@@ -105,7 +105,7 @@ export default async function Home() {
       <div className="bg-primary py-8 text-primary-foreground xl:py-16">
         <div className="m-auto flex max-w-5xl flex-col gap-3 px-6 xl:flex-row xl:gap-6">
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
-            <PencilLine size={32} />
+            {/* <PencilLine size={32} /> */}
             <Typography variant="h3">MDX Based</Typography>
             <Typography variant="large">
               YouCode is based on MDX. You can write your courses in Markdown and
@@ -113,14 +113,14 @@ export default async function Home() {
             </Typography>
           </div>
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
-            <CircleDollarSign size={32} />
+            {/* <CircleDollarSign size={32} /> */}
             <Typography variant="h3">Free to use</Typography>
             <Typography variant="large">
               You want to publish your courses for free? YouCode is free to use.
             </Typography>
           </div>
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
-            <Rocket size={32} />
+            {/* <Rocket size={32} /> */}
             <Typography variant="h3">NextReact project</Typography>
             <Typography variant="large">
               Re-build this app from scratch in{' '}
@@ -143,7 +143,7 @@ export default async function Home() {
           href="/admin/courses/new"
           className={cn(buttonVariants(), 'px-6 py-8 text-xl font-bold')}
         >
-          BUILD YOUR FIRST COURSE
+          REDIGER VOTRE PREMIER
         </Link>
       </div>
       {/* FAQ */}
@@ -175,7 +175,7 @@ export default async function Home() {
           href="/admin/courses/new"
           className={cn(buttonVariants(), 'px-6 py-8 text-xl font-bold')}
         >
-          BUILD YOUR FIRST COURSE
+          REDIGER VOTRE PREMIER
         </Link>
       </div>
     </div>
