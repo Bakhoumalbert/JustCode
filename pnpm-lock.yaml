@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -170,7 +170,7 @@ devDependencies:
     specifier: ^18.2.34
     version: 18.2.34
   '@types/react-dom':
-    specifier: ^18
+    specifier: ^18.0.0
     version: 18.0.0
   '@vitest/ui':
     specifier: ^0.34.6
