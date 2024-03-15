@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
-import { useIsClient } from 'usehooks-ts';
+import { useIsClient } from '../hooks/useIsClient';
 
 export const Breadcrumb = () => {
     const _pathname = usePathname();
@@ -16,7 +16,10 @@ export const Breadcrumb = () => {
 
     return (
         <nav aria-label="Breadcrumb" className="mx-4">
-            <ol role='list' className="text-skin-secondary flex items-center gap-1 text-sm">
+            <ol
+                role="list"
+                className="text-skin-secondary flex items-center gap-1 text-sm"
+            >
                 {pathname.map((item, index) => (
                     <BreadcrumbItem
                         item={item}

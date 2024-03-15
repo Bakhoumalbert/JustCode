@@ -1,17 +1,19 @@
-import { Backbutton } from '@/components/utils/BackButton'
-import { Breadcrumb } from '@/components/utils/Breadcrump'
-import { PropsWithChildren } from 'react'
+import { BackButton } from '@/components/utils/BackButton';
+import { Breadcrumb } from '@/components/utils/Breadcrump';
+import { PropsWithChildren } from 'react';
 
 export default function AdminLayout({ children }: PropsWithChildren) {
     return (
-        <div>
-            <div className="m-auto mt-4 max-w-2xl pl-4 ">
-                <div className='flex flex-row gap-4'>
-                    <Backbutton />
+        <>
+            <div className="w-full border-b border-border/20">
+                <div className="m-auto flex max-w-3xl items-center gap-2 px-4 py-1">
+                    <BackButton variant="ghost" size="sm">
+                        Back
+                    </BackButton>
                     <Breadcrumb />
                 </div>
             </div>
             {children}
-        </div>
-    )
+        </>
+    );
 }

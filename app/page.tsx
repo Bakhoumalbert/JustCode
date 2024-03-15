@@ -5,46 +5,45 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { buttonVariants } from '@/components/ui/button';
 import { prisma } from '@/lib/prisma';
 import { cn } from '@/lib/utils';
-import { CircleDollarSign, PencilLine, Rocket, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const FAQValues = [
   {
-    question: 'What are the limits for course creation on YouCode?',
+    question: "Quelles sont les limites pour la création de cours sur JustCode ?",
     answer:
-      'With YouCode, the only limits are your creativity and the content you are legally allowed to share. There are no restrictions on the number of courses or lessons you can create.',
+      "Avec JustCode, les seules limites sont votre créativité et le contenu que vous êtes légalement autorisé à partager. Il n'y a pas de restrictions sur le nombre de cours ou de leçons que vous pouvez créer.",
   },
   {
-    question: 'Can I integrate quizzes or exercises into my YouCode courses?',
+    question: "Puis-je intégrer des quiz ou des exercices dans mes cours sur JustCode ?",
     answer:
-      'Absolutely! YouCode supports the integration of various types of interactive activities like quizzes, coding exercises, and more.',
+      "Absolument ! JustCode prend en charge l'intégration de différents types d'activités interactives telles que des quiz, des exercices de codage, et plus encore.",
   },
   {
-    question: 'How does YouCode ensure the quality of the courses offered?',
+    question: "Comment JustCode assure-t-il la qualité des cours proposés ?",
     answer:
-      'We have a dedicated team for quality assurance of courses. Moreover, the YouCode community can leave reviews and report inappropriate content.',
+      "Nous avons une équipe dédiée à l'assurance qualité des cours.De plus, la communauté JustCode peut laisser des avis et signaler tout contenu inapproprié.",
   },
   {
-    question: 'Does YouCode offer tracking tools for course creators?',
+    question: "JustCode propose-t-il des outils de suivi pour les créateurs de cours ?",
     answer:
-      "Yes, we provide detailed analytics so you can monitor your students' progress and engagement with your courses.",
+      "Oui, nous fournissons des analyses détaillées afin que vous puissiez suivre la progression et l'engagement de vos étudiants avec vos cours.",
   },
   {
-    question: 'Can I customize the appearance of my courses on YouCode?',
+    question: "Puis-je personnaliser l'apparence de mes cours sur JustCode?",
     answer:
-      'Yes, YouCode offers customization options so you can align the look of your courses with your brand or personal preferences.',
+      "Oui, JustCode propose des options de personnalisation pour que vous puissiez aligner l'apparence de vos cours avec votre marque ou vos préférences personnelles.",
   },
   {
     question:
-      'What support does YouCode provide to content creators in case of issues?',
+      "Quel support JustCode fournit-il aux créateurs de contenu en cas de problèmes ?",
     answer:
-      'We have a responsive support team that can be contacted directly via our platform for any technical issues or questions.',
+      "Nous avons une équipe de support réactive qui peut être contactée directement via notre plateforme pour tout problème technique ou question.",
   },
+
 ];
 
 export default async function Home() {
@@ -63,14 +62,14 @@ export default async function Home() {
       {/* HERO */}
       <div className="m-auto my-8 flex max-w-6xl flex-col gap-4 px-6 lg:my-16 lg:flex-row xl:my-24 xl:gap-8">
         <div className="flex flex-1 flex-col gap-4 lg:gap-6">
-          <h1 className="bg-gradient-to-r from-red-400 to-pink-600 bg-clip-text text-6xl font-extrabold text-transparent">
+          <h1 className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-6xl font-extrabold text-transparent">
             Créer des cours en quelques secondes
           </h1>
           <h2 className="text-2xl font-bold">
             JustCode est le YouTube de l&rsquo;éducation. Vous créerez des cours en ligne en
             secondes.
           </h2>
-          <div className="flex items-center gap-8">
+          {/* <div className="flex items-center gap-8">
             <div className="flex">
               {Array.from({ length: 8 }).map((_, i) => (
                 <Avatar key={i} className="-mr-4">
@@ -89,14 +88,14 @@ export default async function Home() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div>
           <Image
             className='rounded-md'
-            src="/images/myprofil.jpg"
-            width={350}
-            height={15}
+            src="/images/bat.jpg"
+            width={500}
+            height={25}
             alt="app logo"
           />
         </div>
@@ -106,24 +105,23 @@ export default async function Home() {
         <div className="m-auto flex max-w-5xl flex-col gap-3 px-6 xl:flex-row xl:gap-6">
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
             {/* <PencilLine size={32} /> */}
-            <Typography variant="h3">MDX Based</Typography>
+            <Typography variant="h3">Basé sur MDX</Typography>
             <Typography variant="large">
-              YouCode is based on MDX. You can write your courses in Markdown and
-              React.
+              JustCode est basé sur MDX. Vous pouvez écrire vos cours en Markdown et en React.
             </Typography>
           </div>
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
             {/* <CircleDollarSign size={32} /> */}
-            <Typography variant="h3">Free to use</Typography>
+            <Typography variant="h3">Facile d&rsquo;utilisation</Typography>
             <Typography variant="large">
-              You want to publish your courses for free? YouCode is free to use.
+              Vous voulez publier vos cours gratuitement ? L&rsquo;utilisation de JustCode est gratuite.
             </Typography>
           </div>
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
             {/* <Rocket size={32} /> */}
             <Typography variant="h3">NextReact project</Typography>
             <Typography variant="large">
-              Re-build this app from scratch in{' '}
+              Reconstruisez cette application à partir de zéro en {' '}
               <Link
                 href="https://codelynx.dev/nextreact/courses"
                 className="underline"
@@ -136,14 +134,14 @@ export default async function Home() {
       </div>
       {/* CTA */}
       <div className="my-8 flex flex-col items-center gap-4 lg:my-16 xl:my-24">
-        <h2 className="bg-gradient-to-r from-red-400 to-pink-600 bg-clip-text text-4xl font-extrabold text-transparent">
-          Start building your course today
+        <h2 className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-4xl font-extrabold text-transparent">
+          Commence à créer tes cours dès maintenant
         </h2>
         <Link
           href="/admin/courses/new"
           className={cn(buttonVariants(), 'px-6 py-8 text-xl font-bold')}
         >
-          REDIGER VOTRE PREMIER
+          REDIGER VOTRE PREMIER COURS
         </Link>
       </div>
       {/* FAQ */}
@@ -167,7 +165,7 @@ export default async function Home() {
         </div>
       </div>
       {/* CTA */}
-      <div className="my-8 flex flex-col items-center gap-4 lg:my-16 xl:my-24">
+      {/* <div className="my-8 flex flex-col items-center gap-4 lg:my-16 xl:my-24">
         <h2 className="bg-gradient-to-r from-red-400 to-pink-600 bg-clip-text text-4xl font-extrabold text-transparent">
           Try it ! It&rsquo;s free
         </h2>
@@ -177,7 +175,7 @@ export default async function Home() {
         >
           REDIGER VOTRE PREMIER
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

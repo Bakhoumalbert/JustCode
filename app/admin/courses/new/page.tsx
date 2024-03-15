@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
     Layout,
     LayoutContent,
@@ -6,36 +7,23 @@ import {
 } from '@/components/layout/layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { getRequiredAuthSession } from '@/lib/auth';
-import { z } from 'zod';
 import { CourseForm } from '../[courseId]/edit/CourseForm';
 
-
-export default async function NewCoursePage({
-    params,
-    searchParams,
-}: {
-    params: {
-        courseId: string;
-    },
-    searchParams: { [key: string]: string | string[] | undefined };
-}) {
-    const session = await getRequiredAuthSession();
-
-    const page = Number(searchParams.page ?? 0);
+export default async function CoursePage() {
+    await getRequiredAuthSession();
 
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>New course</LayoutTitle>
+                <LayoutTitle>Create course</LayoutTitle>
             </LayoutHeader>
-
             <LayoutContent>
-                <Card className="bg-background">
+                <Card className="flex-[2]">
                     <CardContent className="mt-6">
                         <CourseForm />
                     </CardContent>
                 </Card>
             </LayoutContent>
-        </Layout >
+        </Layout>
     );
 }

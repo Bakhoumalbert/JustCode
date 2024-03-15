@@ -51,14 +51,12 @@ export default async function CoursesPage() {
                     <CardContent className="mt-4">
                         <Table>
                             <TableHeader>
-                                <TableRow>
-                                    <TableHead>Image</TableHead>
-                                    <TableHead>Name</TableHead>
-                                </TableRow>
+                                <TableHead>Image</TableHead>
+                                <TableHead>Name</TableHead>
                             </TableHeader>
                             <TableBody>
                                 {courses.map((course) => (
-                                    <TableRow key={course.id}>
+                                    <TableRow>
                                         <TableCell>
                                             <Avatar className="rounded">
                                                 <AvatarFallback>{course.name[0]}</AvatarFallback>

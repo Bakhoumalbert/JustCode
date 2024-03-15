@@ -1,23 +1,17 @@
-"use client"
-import { usePathname } from 'next/navigation';
-import { useIsClient } from 'usehooks-ts';
-import { Button } from '../ui/button';
+'use client';
 
-export const Backbutton = () => {
+import { useRouter } from 'next/navigation';
+import { Button, ButtonProps } from '../ui/button';
 
-    const _pathname = usePathname();
-    const pathname = _pathname?.split('/').filter(Boolean) ?? [];
-
-    const isClient = useIsClient();
-
-    if (!isClient) return null;
-
+export const BackButton = (props: ButtonProps) => {
+    const router = useRouter();
     return (
-        pathname.length > 1 &&
-        <Button onClick={() => window.history.back()} variant="ghost">
-            Retour
-        </Button>
+        <Button
+            {...props}
+            onClick={(e) => {
+                router.back();
+                props?.onClick?.(e);
+            }}
+        />
     );
-}
-
-
+};

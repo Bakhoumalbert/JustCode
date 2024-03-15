@@ -20,7 +20,7 @@ export const getAdminCourse = async ({
       image: true,
       name: true,
       presentation: true,
-      users: { // Limiter le nombre d'utilisateur sélectionner
+      users: {
         take: 5,
         skip: Math.max(0, userPage * 5),
         select: {
@@ -53,6 +53,6 @@ export const getAdminCourse = async ({
 
   return {
     ...course,
-    users
+    users,
   };
 };
