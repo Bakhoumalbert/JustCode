@@ -6,6 +6,7 @@ import GithubProvider from 'next-auth/providers/github';
 
 export const authOptions: AuthOptions = {
 
+    secret: process.env.NEXTAUTH_SECRET,
     adapter: PrismaAdapter(prisma),
     theme: {
         logo: '/images/logo.png',
