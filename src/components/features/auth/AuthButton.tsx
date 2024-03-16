@@ -3,7 +3,7 @@ import { LoggedInButton } from "./LoggedInButton";
 import { LoginButton } from "./LoginButton";
 
 export type AuthButtonProps = {};
-export const AuthButton = async (props: AuthButtonProps) => {
+export const AuthButton = async () => {
     const session = await getAuthSession();
 
     const user = session?.user;
