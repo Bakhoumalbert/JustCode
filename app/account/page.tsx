@@ -40,12 +40,14 @@ export default async function AccountPage() {
                 >
                     Settings
                 </Link>
-                <Link
-                    className={buttonVariants({ variant: 'outline', size: 'lg' })}
-                    href="/admin"
-                >
-                    Admin
-                </Link>
+                {session.user.email === "bakhoum.albert@uam.edu.sn" && (
+                    <Link
+                        className={buttonVariants({ variant: 'outline', size: 'lg' })}
+                        href="/admin"
+                    >
+                        Admin
+                    </Link>
+                )}
             </CardContent>
             <CardFooter className="flex flex-row-reverse">
                 <LogoutButton />
