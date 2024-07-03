@@ -15,7 +15,7 @@ export const Footer = () => {
                             height={30}
                             alt="app logo"
                         />
-                        <Typography variant="base" as={Link} href="/">
+                        <Typography variant="base" as={Link} href="/" className='bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-xl font-extrabold text-transparent'>
                             {SiteConfig.title}
                         </Typography>
                     </div>

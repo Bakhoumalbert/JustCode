@@ -12,8 +12,10 @@ export function Header() {
                 <div className="flex items-center gap-2">
                     <Image src="/images/logo.png" width={50} height={35} alt="app logo" />
                     <div className="flex items-baseline gap-2">
-                        <Typography variant="h3" as={Link} href="/">
+                        <Typography  variant="h3" as={Link} href="/">
+                            <h3 className='bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-2xl font-extrabold text-transparent'>
                             {SiteConfig.title}
+                            </h3>
                         </Typography>
                     </div>
                 </div>
