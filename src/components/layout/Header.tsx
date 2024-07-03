@@ -7,7 +7,7 @@ import { AuthButton } from '../features/auth/AuthButton';
 
 export function Header() {
     return (
-        <header className="sticky top-0 z-40 w-full border-b bg-background">
+        <header className="sticky top-0 z-40 w-full border-b bg-background px-2">
             <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
                 <div className="flex items-center gap-2">
                     <Image src="/images/logo.png" width={50} height={35} alt="app logo" />
@@ -15,6 +15,10 @@ export function Header() {
                         <Typography variant="h3" as={Link} href="/">
                             {SiteConfig.title}
                         </Typography>
+                    </div>
+                </div>
+                <div className="flex flex-1 items-center justify-end space-x-4">
+                    <div className='flex gap-2'>
                         <Typography
                             as={Link}
                             variant="link"
@@ -32,8 +36,6 @@ export function Header() {
                             Courses
                         </Typography>
                     </div>
-                </div>
-                <div className="flex flex-1 items-center justify-end space-x-4">
                     <nav className="flex items-center space-x-1">
                         <AuthButton />
                         <ThemeToggle />
