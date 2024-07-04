@@ -1,7 +1,7 @@
 // src/lib/site-config.ts
 
 export const SiteConfig = {
-  title: 'JustCode',
-  description: 'You JUST need to CODE.',
+  title: 'justLearn',
+  description: 'You JUST need to LEARN your courses.',
 } as const;
 

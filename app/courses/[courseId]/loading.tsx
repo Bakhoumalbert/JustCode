@@ -11,7 +11,7 @@ export default async function CoursePage() {
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Your courses</LayoutTitle>
+                <LayoutTitle>Vos cours</LayoutTitle>
             </LayoutHeader>
             <LayoutContent>
                 <CoursePlaceholder />

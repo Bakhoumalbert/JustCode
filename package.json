@@ -1,9 +1,9 @@
 {
-  "name": "justcode",
+  "name": "justcreate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 8088",
+    "dev": "next dev --port 8000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -40,6 +40,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
+    "framer-motion": "^11.0.14",
     "lucide-react": "^0.288.0",
     "next": "14.0.1",
     "next-auth": "^4.24.7",

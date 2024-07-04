@@ -15,7 +15,7 @@ export const NewUserCharts = (props: NewUserChartsProps) => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Users course activity</CardTitle>
+                <CardTitle>Activité de cours</CardTitle>
             </CardHeader>
             <CardContent>
                 <ResponsiveContainer width="100%" height={300}>

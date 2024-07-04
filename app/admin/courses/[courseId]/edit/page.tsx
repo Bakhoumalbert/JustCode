@@ -40,7 +40,7 @@ export default async function EditPage({
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Edit course</LayoutTitle>
+                <LayoutTitle>Editer cours</LayoutTitle>
             </LayoutHeader>
             <LayoutContent>
                 <Card className="flex-[2]">

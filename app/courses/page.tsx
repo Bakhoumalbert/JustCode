@@ -32,7 +32,7 @@ export default async function CoursesPage({
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Your courses</LayoutTitle>
+                <LayoutTitle>Vos cours</LayoutTitle>
             </LayoutHeader>
             <LayoutContent className="flex flex-col gap-8">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
@@ -43,9 +43,9 @@ export default async function CoursesPage({
                 {courses.length === 0 ? (
                     <Alert>
                         <AlertTriangle />
-                        <AlertTitle>You are not enrolled in any courses yet.</AlertTitle>
+                        <AlertTitle>Vous n&rsquo;etes pas encore enrollés.</AlertTitle>
                         <AlertDescription>
-                            Please go to the explorer page to find a course.
+                            Allez à la page explorer pour voir des cours.
                         </AlertDescription>
                     </Alert>
                 ) : (

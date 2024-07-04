@@ -34,7 +34,7 @@ export default async function CoursesPage() {
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Courses</LayoutTitle>
+                <LayoutTitle>Cours</LayoutTitle>
             </LayoutHeader>
             <LayoutActions>
                 <Link
@@ -43,7 +43,7 @@ export default async function CoursesPage() {
                         variant: 'secondary',
                     })}
                 >
-                    New Course
+                    Nouveau Cours
                 </Link>
             </LayoutActions>
             <LayoutContent>
@@ -52,7 +52,7 @@ export default async function CoursesPage() {
                         <Table>
                             <TableHeader>
                                 <TableHead>Image</TableHead>
-                                <TableHead>Name</TableHead>
+                                <TableHead>Nom</TableHead>
                             </TableHeader>
                             <TableBody>
                                 {courses.map((course) => (

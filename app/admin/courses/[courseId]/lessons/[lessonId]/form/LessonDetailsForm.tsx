@@ -63,7 +63,7 @@ export const LessonDetail = ({ defaultValue }: LessonDetailFormProps) => {
                 name="name"
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel>Nom</FormLabel>
                         <FormControl>
                             <Input placeholder="NextReact" {...field} />
                         </FormControl>
@@ -76,11 +76,11 @@ export const LessonDetail = ({ defaultValue }: LessonDetailFormProps) => {
                 name="state"
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>State</FormLabel>
+                        <FormLabel>Etat</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                                 <SelectTrigger>
-                                    <SelectValue placeholder="Select a state" />
+                                    <SelectValue placeholder="Selectionner un état" />
                                 </SelectTrigger>
                             </FormControl>
                             <SelectContent>
@@ -95,7 +95,7 @@ export const LessonDetail = ({ defaultValue }: LessonDetailFormProps) => {
                     </FormItem>
                 )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Soumettre</Button>
         </Form>
     );
 };

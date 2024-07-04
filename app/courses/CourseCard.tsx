@@ -12,8 +12,9 @@ export const CourseCard = (props: CourseCardProps) => {
     return (
         <Link href={`/courses/${props.course.id}`}>
             <Card className="hover:bg-accent">
-                <CardHeader className="flex flex-row gap-3 space-y-0">
-                    <Avatar className="h-14 w-14 rounded">
+                <CardHeader className="flex flex-col gap-3 space-y-2">
+                    <CardTitle>{props.course.name}</CardTitle>
+                    <Avatar className="h-32 w-full rounded">
                         <AvatarFallback>
                             {props.course.name.charAt(0) +
                                 props.course.name.charAt(props.course.name.length - 1)}
@@ -21,15 +22,14 @@ export const CourseCard = (props: CourseCardProps) => {
                         {props.course.image ? <AvatarImage src={props.course.image} /> : null}
                     </Avatar>
                     <div className="flex flex-col gap-3">
-                        <CardTitle>{props.course.name}</CardTitle>
-                        <div className="flex flex-row gap-2">
+                        <div className="flex flex-row items-center gap-2">
                             <Avatar className="h-8 w-8">
                                 <AvatarFallback>{props.course.name[0]}</AvatarFallback>
                                 {props.course.creator.image ? (
                                     <AvatarImage src={props.course.creator.image} />
                                 ) : null}
                             </Avatar>
-                            <Typography variant="large" className=" text-muted-foreground">
+                            <Typography variant="base" className=" text-muted-foreground">
                                 {props.course.creator.name}
                             </Typography>
                         </div>

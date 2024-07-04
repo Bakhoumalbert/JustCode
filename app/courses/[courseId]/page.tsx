@@ -29,7 +29,7 @@ export default async function CoursePage({
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Course</LayoutTitle>
+                <LayoutTitle>Cours</LayoutTitle>
             </LayoutHeader>
             <LayoutContent>
                 <Course course={course} userId={session?.user.id} />

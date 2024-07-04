@@ -30,7 +30,7 @@ export default async function SettingsPage({
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Account settings</LayoutTitle>
+                <LayoutTitle>Parametres du compte</LayoutTitle>
             </LayoutHeader>
 
             <LayoutContent>
@@ -77,13 +77,13 @@ export default async function SettingsPage({
                                 <Input defaultValue={session.user.image} name="image" id="image" />
                             </div>
                             <div className="flex flex-col gap-1">
-                                <Label htmlFor="name">Name</Label>
+                                <Label htmlFor="name">Nom</Label>
                                 <Input defaultValue={session.user.name} name="name" id="name" />
                             </div>
                             {searchParams.error && (
-                                <Typography>Error: {searchParams.error as string}</Typography>
+                                <Typography>Erreur: {searchParams.error as string}</Typography>
                             )}
-                            <Button>Submit</Button>
+                            <Button>Soumettre</Button>
                         </form>
                     </CardContent>
                 </Card>

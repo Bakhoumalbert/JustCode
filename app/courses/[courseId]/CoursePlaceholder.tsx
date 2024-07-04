@@ -36,7 +36,7 @@ export const CoursePlaceholder = () => {
                 </Card>
                 <Card className="flex-1">
                     <CardHeader>
-                        <CardTitle>Lessons</CardTitle>
+                        <CardTitle>Leçons</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-2">
                         {Array.from({ length: 5 }).map((_, i) => (

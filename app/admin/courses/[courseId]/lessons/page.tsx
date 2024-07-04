@@ -34,12 +34,12 @@ export default async function CourseLessonsPage({
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Lessons · {course.name}</LayoutTitle>
+                <LayoutTitle>Leçons · {course.name}</LayoutTitle>
             </LayoutHeader>
             <LayoutContent className="flex flex-col gap-4 lg:flex-row">
                 <Card className="flex-[2]">
                     <CardHeader>
-                        <CardTitle>Lessons</CardTitle>
+                        <CardTitle>Leçons</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-2">
                         <AdminLessonSortable items={course.lessons} />
@@ -76,7 +76,7 @@ export default async function CourseLessonsPage({
                                     redirect(`/admin/courses/${courseId}/lessons/${lesson.id}`);
                                 }}
                             >
-                                Créer une lesson
+                                Créer une leçon
                             </SubmitButton>
                         </form>
                     </CardContent>

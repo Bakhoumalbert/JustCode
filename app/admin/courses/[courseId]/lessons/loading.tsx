@@ -10,7 +10,7 @@ export default function loading() {
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Loading...</LayoutTitle>
+                <LayoutTitle>Chargement...</LayoutTitle>
             </LayoutHeader>
             <LayoutContent>
                 <Loader size={32} />

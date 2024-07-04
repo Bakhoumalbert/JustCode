@@ -38,17 +38,17 @@ export const QuickStats = async () => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Quick stats</CardTitle>
+                <CardTitle>Statistiques rapides</CardTitle>
             </CardHeader>
             <CardContent>
                 <Typography className="">
-                    <User2 className="inline" size={16} /> {users} users
+                    <User2 className="inline" size={16} /> {users} utilisateurs
                 </Typography>
                 <Typography>
-                    <BookCheck className="inline" size={16} /> {lessons} lessons
+                    <BookCheck className="inline" size={16} /> {lessons} leçons
                 </Typography>
                 <Typography>
-                    <Presentation className="inline" size={16} /> {courses} courses
+                    <Presentation className="inline" size={16} /> {courses} cours
                 </Typography>
             </CardContent>
         </Card>

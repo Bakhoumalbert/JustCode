@@ -5,7 +5,7 @@ import { Typography } from '../ui/Typography';
 
 export const Footer = () => {
     return (
-        <footer className="w-full border-t border-card">
+        <footer className="mt-2 w-full border-t border-card">
             <div className="m-auto w-full max-w-3xl px-2 py-4">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                     <div className="flex flex-row items-center gap-2">
@@ -15,7 +15,7 @@ export const Footer = () => {
                             height={30}
                             alt="app logo"
                         />
-                        <Typography variant="base" as={Link} href="/">
+                        <Typography variant="base" as={Link} href="/" className='bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-xl font-extrabold text-transparent'>
                             {SiteConfig.title}
                         </Typography>
                     </div>
@@ -36,7 +36,7 @@ export const Footer = () => {
                 </div>
                 <div className="flex w-full items-center justify-center">
                     <Typography variant="base" className="text-xs text-muted-foreground">
-                        &copy; {new Date().getFullYear()} JustCode by ASB
+                        &copy; {new Date().getFullYear()} {SiteConfig.title} by ASB
                     </Typography>
                 </div>
             </div>

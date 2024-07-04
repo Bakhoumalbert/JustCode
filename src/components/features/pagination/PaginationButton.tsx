@@ -25,7 +25,7 @@ export const CoursePaginationButton = (props: CoursePaginationButtonProps) => {
                     router.push(url);
                 }}
             >
-                Previous
+                Précédent
             </Button>
             <Button
                 variant="outline"
@@ -39,7 +39,7 @@ export const CoursePaginationButton = (props: CoursePaginationButtonProps) => {
                     router.push(url);
                 }}
             >
-                Next
+                Suivant
             </Button>
         </div>
     );

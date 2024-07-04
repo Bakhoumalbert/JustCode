@@ -74,8 +74,8 @@ export const CourseForm = ({ defaultValue }: CourseFormProps) => {
                             <Input placeholder="https://googleimage.com" {...field} />
                         </FormControl>
                         <FormDescription>
-                            Host and use an image. You can use{' '}
-                            <Link href="https://imgur.com">Imgur</Link> to host your image.
+                            Héberger et utiliser une image. Vous pouvez utiliser{' '}
+                            <Link href="https://imgur.com">Imgur</Link> pour héberger une image.
                         </FormDescription>
                         <FormMessage />
                     </FormItem>
@@ -86,7 +86,7 @@ export const CourseForm = ({ defaultValue }: CourseFormProps) => {
                 name="name"
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel>Nom</FormLabel>
                         <FormControl>
                             <Input placeholder="NextReact" {...field} />
                         </FormControl>
@@ -99,11 +99,11 @@ export const CourseForm = ({ defaultValue }: CourseFormProps) => {
                 name="presentation"
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>Presentation</FormLabel>
+                        <FormLabel>Présentation</FormLabel>
                         <FormControl>
                             <Textarea placeholder="## Some title" {...field} />
                         </FormControl>
-                        <FormDescription>Markdown is supported.</FormDescription>
+                        <FormDescription>Le format Markdown est pris en charge.</FormDescription>
                         <FormMessage />
                     </FormItem>
                 )}
@@ -114,11 +114,11 @@ export const CourseForm = ({ defaultValue }: CourseFormProps) => {
                 name="state"
                 render={({ field }) => (
                     <FormItem>
-                        <FormLabel>State</FormLabel>
+                        <FormLabel>Etat</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                                 <SelectTrigger>
-                                    <SelectValue placeholder="Select a state" />
+                                    <SelectValue placeholder="Selectionner un état" />
                                 </SelectTrigger>
                             </FormControl>
                             <SelectContent>
@@ -134,7 +134,7 @@ export const CourseForm = ({ defaultValue }: CourseFormProps) => {
                 )}
             />
 
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Soumettre</Button>
         </Form>
     );
 };

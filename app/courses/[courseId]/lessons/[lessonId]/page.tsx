@@ -7,6 +7,7 @@ import { OpenLessonNavigationButton } from './OpenLessonNavigationButton';
 import { handleLessonState } from './lesson.action';
 import { getLesson } from './lesson.query';
 import { SubmitButton } from '@/components/form/submitButton';
+import { Layout, LayoutActions } from '@/components/layout/layout';
 
 export default async function LessonPage({
     params: { lessonId, courseId },
@@ -51,30 +52,32 @@ export default async function LessonPage({
     }
 
     return (
-        <Card className="flex-1">
-            <CardHeader className="flex-row items-center gap-2 space-y-0">
-                <OpenLessonNavigationButton />
-                <CardTitle>{lesson.name}</CardTitle>
-            </CardHeader>
-            <CardContent className="">
-                <MdxProse markdown={lesson.content} />
+        <Layout>
+            <Card className="flex-1">
+                <CardHeader className="flex-row items-center gap-2 space-y-0">
+                    <OpenLessonNavigationButton />
+                    <CardTitle>{lesson.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="">
+                    <MdxProse markdown={lesson.content} />
 
-                <form className="m-auto flex max-w-2xl flex-row-reverse">
-                    <SubmitButton
-                        formAction={async () => {
-                            'use server';
+                    <form className="m-auto flex max-w-2xl flex-row-reverse">
+                        <SubmitButton
+                            formAction={async () => {
+                                'use server';
 
-                            await handleLessonState({
-                                lessonId: lesson.id,
-                                progress:
-                                    lesson.progress === 'COMPLETED' ? 'IN_PROGRESS' : 'COMPLETED',
-                            });
-                        }}
-                    >
-                        {lesson.progress === 'COMPLETED' ? 'Mark as in progress' : 'Completed'}
-                    </SubmitButton>
-                </form>
-            </CardContent>
-        </Card>
+                                await handleLessonState({
+                                    lessonId: lesson.id,
+                                    progress:
+                                        lesson.progress === 'COMPLETED' ? 'IN_PROGRESS' : 'COMPLETED',
+                                });
+                            }}
+                        >
+                            {lesson.progress === 'COMPLETED' ? 'Marqué comme en progression' : 'Completed'}
+                        </SubmitButton>
+                    </form>
+                </CardContent>
+            </Card>
+        </Layout>
     );
 }

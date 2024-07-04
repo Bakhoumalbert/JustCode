@@ -50,7 +50,7 @@ export const Course = ({ course, userId }: CourseProps) => {
                 </Card>
                 <Card className="flex-1">
                     <CardHeader>
-                        <CardTitle>Lessons</CardTitle>
+                        <CardTitle>Leçons</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-2">
                         {course.lessons.map((lesson) => (
@@ -60,14 +60,14 @@ export const Course = ({ course, userId }: CourseProps) => {
                             <Alert>
                                 <AlertTriangle />
                                 <AlertTitle>
-                                    There are no lessons yet. Please come back later.
+                                    Il n&rsquo;y a pas encore de leçon disponibles. Revenez plutard.
                                 </AlertTitle>
                             </Alert>
                         ) : null}
                     </CardContent>
                 </Card>
             </div>
-            {course.isCanceled ? <p> You can&rsquo;t join this course.</p> : null}
+            {course.isCanceled ? <p> Vous pouvez rejoindre ce cours.</p> : null}
             {!course.isCanceled && !course.isEnrolled && isLogin ? (
                 <div>
                     <form>
@@ -121,7 +121,7 @@ export const Course = ({ course, userId }: CourseProps) => {
                                 redirect(`/courses/${course.id}/lessons/${lesson.id}`);
                             }}
                         >
-                            Join
+                            Rejoindre
                         </SubmitButton>
                     </form>
                 </div>

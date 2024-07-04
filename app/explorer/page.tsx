@@ -24,7 +24,7 @@ export default async function ExplorerPage({
                 <LayoutTitle>Explorer</LayoutTitle>
             </LayoutHeader>
             <LayoutContent className="flex flex-col gap-8">
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 2xl:grid-cols-3">
                     {courses.map((course) => (
                         <CourseCard course={course} key={course.id} />
                     ))}
@@ -33,10 +33,10 @@ export default async function ExplorerPage({
                     <Alert>
                         <AlertTriangle />
                         <AlertTitle>
-                            There are no courses yet. Please come back later.
+                            Il n&rsquo;a pas encore de cours disponible. SVP revenez plutard.
                         </AlertTitle>
                         <AlertDescription>
-                            We are working hard to bring you the best courses.
+                            Nous travaillons dure pour vous apporter les meilleurs cours.
                         </AlertDescription>
                     </Alert>
                 ) : (

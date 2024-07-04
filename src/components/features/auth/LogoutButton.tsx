@@ -25,7 +25,7 @@ export const LogoutButton = () => {
             ) : (
                 <LogOut className="mr-2" size={12} />
             )}
-            Logout
+            Déconnexion
         </Button>
     );
 };

@@ -20,11 +20,11 @@ export default async function CoursesPage() {
     return (
         <Layout>
             <LayoutHeader>
-                <LayoutTitle>Courses</LayoutTitle>
+                <LayoutTitle>Cours</LayoutTitle>
             </LayoutHeader>
             <LayoutActions>
                 <Link href={'/admin/courses'} className={buttonVariants()}>
-                    Courses
+                    Cours
                 </Link>
             </LayoutActions>
             <LayoutContent className="flex flex-col gap-4">
@@ -32,7 +32,7 @@ export default async function CoursesPage() {
                     fallback={
                         <Card>
                             <CardHeader>
-                                <CardTitle>Quick stats</CardTitle>
+                                <CardTitle>Statistiques rapides</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <Typography className="flex items-center gap-2">
@@ -57,7 +57,7 @@ export default async function CoursesPage() {
                     fallback={
                         <Card>
                             <CardHeader>
-                                <CardTitle>Users course activity</CardTitle>
+                                <CardTitle>Activité de cours</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <Skeleton className="h-60 w-full" />

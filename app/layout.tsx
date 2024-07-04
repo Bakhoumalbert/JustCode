@@ -1,14 +1,14 @@
 // app/layout.tsx
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { TailwindIndicator } from '@/components/utils/tailwindIndicator';
 import { SiteConfig } from '@/lib/site-config';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import { PropsWithChildren } from 'react';
 import { Providers } from './Provider';
-import { TailwindIndicator } from '@/components/utils/tailwindIndicator';
-import React, { PropsWithChildren } from 'react';
+import './globals.css';
 
 const fontSans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 

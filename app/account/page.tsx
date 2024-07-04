@@ -19,6 +19,8 @@ export default async function AccountPage() {
         throw new Error('No session found');
     }
 
+      
+
     return (
         <Card className="m-auto mt-4 max-w-2xl">
             <CardHeader className="flex flex-row gap-4 space-y-0">
@@ -40,12 +42,14 @@ export default async function AccountPage() {
                 >
                     Settings
                 </Link>
-                <Link
-                    className={buttonVariants({ variant: 'outline', size: 'lg' })}
-                    href="/admin"
-                >
-                    Admin
-                </Link>
+                {session.user.email === "bakhoum.alou21@gmail.com" && (
+                    <Link
+                        className={buttonVariants({ variant: 'outline', size: 'lg' })}
+                        href="/admin"
+                    >
+                        Admin
+                    </Link>
+                )}
             </CardContent>
             <CardFooter className="flex flex-row-reverse">
                 <LogoutButton />

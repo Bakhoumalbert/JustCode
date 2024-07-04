@@ -26,10 +26,10 @@ export default function Error({
         <Card className="m-auto mt-4 max-w-lg">
             <CardHeader>
                 <CardTitle>
-                    Sorry, an error occurred while processing your request.
+                    Désolé, une erreur s&rsquo;est produite lors du traitement de votre demande.
                 </CardTitle>
                 <CardDescription>
-                    Try to login again or contact support if the problem persists.
+                    Essayez de vous connecter à nouveau ou contactez l&rsquo;assistance si le problème persiste.
                 </CardDescription>
             </CardHeader>
             <CardFooter>
