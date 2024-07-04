@@ -3,6 +3,7 @@ import { LoggedInButton } from "./LoggedInButton";
 import { LoginButton } from "./LoginButton";
 
 export type AuthButtonProps = {};
+
 export const AuthButton = async () => {
     const session = await getAuthSession();
 
@@ -11,6 +12,7 @@ export const AuthButton = async () => {
     if (!user) {
         return <LoginButton />;
     }
+
 
     return <LoggedInButton user={user} />;
 };
