@@ -42,7 +42,7 @@ export default async function AccountPage() {
                 >
                     Settings
                 </Link>
-                {session.user.email === "bakhoum.alou21@gmail.com" && (
+                {session.user.email === "bakhoum.albert@uam.edu.sn" && (
                     <Link
                         className={buttonVariants({ variant: 'outline', size: 'lg' })}
                         href="/admin"

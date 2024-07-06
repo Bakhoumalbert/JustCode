@@ -13,35 +13,35 @@ import Link from 'next/link';
 
 const FAQValues = [
   {
-    question: "Quelles sont les limites pour la création de cours sur JustCode ?",
+    question: "Quelles sont les limites pour la consultation de cours sur JustLearn ?",
     answer:
-      "Avec JustCode, les seules limites sont votre créativité et le contenu que vous êtes légalement autorisé à partager. Il n'y a pas de restrictions sur le nombre de cours ou de leçons que vous pouvez créer.",
+      "Avec JustLearn, les seules limites sont votre disponibilité d'apprendre sur justLearn.",
   },
+  // {
+  //   question: "Puis-je intégrer des quiz ou des exercices dans mes cours sur JustLearn ?",
+  //   answer:
+  //     "Absolument ! JustLearn prend en charge l'intégration de différents types d'activités interactives telles que des quiz, des exercices de codage, et plus encore.",
+  // },
   {
-    question: "Puis-je intégrer des quiz ou des exercices dans mes cours sur JustCode ?",
+    question: "Comment JustLearn assure-t-il la qualité des cours proposés ?",
     answer:
-      "Absolument ! JustCode prend en charge l'intégration de différents types d'activités interactives telles que des quiz, des exercices de codage, et plus encore.",
+      "Je vous partage de que j'ai appris. c'est pourquoi je suis ouvert pour toute contribution",
   },
-  {
-    question: "Comment JustCode assure-t-il la qualité des cours proposés ?",
-    answer:
-      "Nous avons une équipe dédiée à l'assurance qualité des cours.De plus, la communauté JustCode peut laisser des avis et signaler tout contenu inapproprié.",
-  },
-  {
-    question: "JustCode propose-t-il des outils de suivi pour les créateurs de cours ?",
-    answer:
-      "Oui, nous fournissons des analyses détaillées afin que vous puissiez suivre la progression et l'engagement de vos étudiants avec vos cours.",
-  },
-  {
-    question: "Puis-je personnaliser l'apparence de mes cours sur JustCode?",
-    answer:
-      "Oui, JustCode propose des options de personnalisation pour que vous puissiez aligner l'apparence de vos cours avec votre marque ou vos préférences personnelles.",
-  },
+  // {
+  //   question: "JustLearn propose-t-il des outils de suivi pour les créateurs de cours ?",
+  //   answer:
+  //     "Oui, nous fournissons des analyses détaillées afin que vous puissiez suivre la progression et l'engagement de vos étudiants avec vos cours.",
+  // },
+  // {
+  //   question: "Puis-je personnaliser l'apparence de mes cours sur JustLearn?",
+  //   answer:
+  //     "Oui, JustLearn propose des options de personnalisation pour que vous puissiez aligner l'apparence de vos cours avec votre marque ou vos préférences personnelles.",
+  // },
   {
     question:
-      "Quel support JustCode fournit-il aux créateurs de contenu en cas de problèmes ?",
+      "Quel support JustLearn fournit-il aux apprenants de contenu en cas de problèmes ?",
     answer:
-      "Nous avons une équipe de support réactive qui peut être contactée directement via notre plateforme pour tout problème technique ou question.",
+      "Le support sera bientôt disponible",
   },
 
 ];
@@ -60,14 +60,13 @@ export default async function Home() {
   return (
     <div>
       {/* HERO */}
-      <div className="m-auto my-8 flex max-w-6xl flex-col gap-4 px-6 lg:my-16 lg:flex-row xl:my-24 xl:gap-8">
+      <div className="m-auto my-8 flex max-w-5xl flex-col items-center gap-4 px-6 lg:my-16 lg:flex-row xl:my-24 xl:gap-8">
         <div className="flex flex-1 flex-col gap-4 lg:gap-6">
-          <h1 className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-6xl font-extrabold text-transparent">
-            Créer des cours en quelques secondes
+          <h1 className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-5xl font-extrabold text-transparent">
+            Découvrez un monde de connaissances !
           </h1>
-          <h2 className="text-2xl font-bold">
-            JustCode est le YouTube de l&rsquo;éducation. Vous créerez des cours en ligne en
-            secondes.
+          <h2 className="text-xl">
+            Bienvenue sur JustLearn, votre destination ultime pour l&rsquo;apprentissage ! Vous trouverez du contenu interactifs, des projets passionnants et bien plus encore.
           </h2>
           {/* <div className="flex items-center gap-8">
             <div className="flex">
@@ -93,9 +92,9 @@ export default async function Home() {
         <div>
           <Image
             className='rounded-md'
-            src="/images/bat.jpg"
-            width={500}
-            height={25}
+            src="/images/learn.svg"
+            width={400}
+            height={15}
             alt="app logo"
           />
         </div>
@@ -107,14 +106,14 @@ export default async function Home() {
             {/* <PencilLine size={32} /> */}
             <Typography variant="h3">Basé sur MDX</Typography>
             <Typography variant="large">
-              JustCode est basé sur MDX. Vous pouvez écrire vos cours en Markdown et en React.
+              JustLearn est basé sur MDX. Vous pouvez écrire vos cours en Markdown et en React.
             </Typography>
           </div>
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
             {/* <CircleDollarSign size={32} /> */}
             <Typography variant="h3">Facile d&rsquo;utilisation</Typography>
             <Typography variant="large">
-              Vous voulez publier vos cours gratuitement ? L&rsquo;utilisation de JustCode est gratuite.
+              Vous pouvez suivre vos cours gratuitement ? L&rsquo;utilisation de JustLearn est gratuite.
             </Typography>
           </div>
           <div className="flex flex-1 flex-col items-center gap-2 text-center">
@@ -135,13 +134,13 @@ export default async function Home() {
       {/* CTA */}
       <div className="my-8 flex flex-col items-center gap-4 lg:my-16 xl:my-24">
         <h2 className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-4xl font-extrabold text-transparent">
-          Commence à créer tes cours dès maintenant
+          Commence à apprendre dès maintenant
         </h2>
         <Link
-          href="/admin/courses/new"
+          href="/explorer"
           className={cn(buttonVariants(), 'px-6 py-8 text-xl font-bold')}
         >
-          REDIGER VOTRE PREMIER COURS
+          CONSULTER VOTRE PREMIER COURS
         </Link>
       </div>
       {/* FAQ */}
